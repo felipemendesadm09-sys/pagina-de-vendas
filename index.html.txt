@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforme Sua Vida Financeira | Curso Completo</title>
+    <meta name="description" content="Aprenda a gerar renda online do zero. Método comprovado por mais de 5.000 alunos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #F4F4F4;
+            --success: #28a745;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cta-header {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-header:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 20px 50px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .guarantee {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        .timer-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timer-number {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .timer-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: var(--dark);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            background: var(--light);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: var(--light);
+            padding: 80px 0;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pricing-card {
+            max-width: 600px;
+            margin: 40px auto;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            font-size: 24px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 72px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price-detail {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .bonus-list {
+            text-align: left;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .bonus-item {
+            margin: 15px 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bonus-item::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .faq-item {
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--success);
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 18px;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .current-price {
+                font-size: 48px;
+            }
+
+            .timer {
+                gap: 15px;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">💰 Renda Online Pro</div>
+                <button class="cta-header" onclick="scrollToCheckout()">GARANTIR MINHA VAGA</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate">Descubra Como <span class="highlight">Ganhar R$ 3.000 a R$ 10.000 por Mês</span> Trabalhando de Casa</h1>
+            <p class="subtitle animate">Método comprovado por mais de 5.000 alunos que transformaram suas vidas financeiras</p>
+            <a href="#checkout" class="cta-button animate">QUERO COMEÇAR AGORA</a>
+            <p class="guarantee">🔒 Garantia de 30 dias ou seu dinheiro de volta</p>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <div class="countdown">
+        <div class="container">
+            <p><strong>⚠️ OFERTA ESPECIAL TERMINA EM:</strong></p>
+            <div class="timer">
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">Horas</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">Minutos</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Conquistar</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💸</div>
+                    <h3>Renda Extra Garantida</h3>
+                    <p>Aprenda estratégias validadas para gerar renda online do zero, mesmo sem experiência prévia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏠</div>
+                    <h3>Trabalhe de Qualquer Lugar</h3>
+                    <p>Liberdade geográfica total. Trabalhe de casa, de um café ou viajando pelo mundo.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Flexibilidade de Horários</h3>
+                    <p>Você decide quando trabalhar. Concilie com seu emprego atual ou estudos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Crescimento Escalável</h3>
+                    <p>Sistema que cresce com você. Quanto mais você aplica, mais você ganha.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3>Suporte Completo</h3>
+                    <p>Comunidade exclusiva, mentorias ao vivo e suporte direto com especialistas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Primeiros ganhos em até 30 dias seguindo o método passo a passo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Veja o Que Nossos Alunos Estão Dizendo</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Em 2 meses consegui minha primeira venda de R$ 1.500. Hoje faturei mais de R$ 45.000 e larguei meu emprego CLT. Melhor investimento da minha vida!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>Maria Clara</h4>
+                            <p>Ex-professora, hoje empreendedora digital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Estava desempregado e desesperado. Segui o método e em 45 dias já estava faturando R$ 3.200 por mês. Hoje tenho minha liberdade financeira!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Roberto Silva</h4>
+                            <p>Conquistou independência financeira</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Trabalho 3 horas por dia e ganho mais do que ganhava em 8 horas no escritório. Tenho tempo para minha família e viajo quando quero!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div class="author-info">
+                            <h4>Ana Paula</h4>
+                            <p>Mãe de 2 filhos, trabalha de casa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="checkout">
+        <div class="container">
+            <h2 class="section-title">Oferta Especial Por Tempo Limitado</h2>
+            <div class="pricing-card">
+                <p class="old-price">De R$ 1.997,00</p>
+                <p>Por apenas</p>
+                <div class="current-price">R$ 497</div>
+                <p class="price-detail">ou 12x de R$ 49,70</p>
+
+                <div class="bonus-list">
+                    <h3 style="margin-bottom: 20px;">✨ Bônus Exclusivos Inclusos:</h3>
+                    <div class="bonus-item">Módulo Completo: Do Zero ao Primeiro Faturamento</div>
+                    <div class="bonus-item">Acesso Vitalício à Plataforma</div>
+                    <div class="bonus-item">Comunidade Exclusiva no Telegram</div>
+                    <div class="bonus-item">4 Mentorias Ao Vivo por Mês</div>
+                    <div class="bonus-item">Templates Prontos para Usar</div>
+                    <div class="bonus-item">Certificado de Conclusão</div>
+                    <div class="bonus-item">Garantia Incondicional de 30 Dias</div>
+                </div>
+
+                <a href="#" class="cta-button" onclick="processCheckout(); return false;">GARANTIR MINHA VAGA AGORA</a>
+
+                <div class="guarantee-badge">✓ Garantia de 30 Dias ou Devolução Total</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Preciso ter experiência prévia?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Não! O curso foi desenvolvido para iniciantes. Começamos do absoluto zero e te levamos passo a passo até os primeiros resultados.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Quanto tempo leva para ter resultados?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    A maioria dos nossos alunos consegue os primeiros ganhos entre 30 e 60 dias. Tudo depende da sua dedicação e aplicação do método.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Preciso investir dinheiro além do curso?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Não necessariamente. Ensinamos métodos que podem ser iniciados com investimento zero ou muito baixo. Você decide o quanto quer investir.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Como funciona a garantia?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Você tem 30 dias para testar todo o conteúdo. Se não ficar satisfeito por qualquer motivo, devolvemos 100% do seu investimento, sem perguntas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Por quanto tempo terei acesso?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    O acesso é vitalício! Você pode assistir e reassistir as aulas quantas vezes quiser, para sempre.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Posso fazer mesmo trabalhando em tempo integral?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! O método foi criado justamente para quem tem pouco tempo. Com 1-2 horas por dia você já consegue aplicar e ver resultados.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Não Deixe Essa Oportunidade Passar</h2>
+            <p style="font-size: 20px; margin: 20px 0;">Milhares de pessoas já transformaram suas vidas. Agora é a sua vez!</p>
+            <div class="guarantee-badge">🔒 Compra 100% Segura e Protegida</div>
+            <a href="#checkout" class="cta-button" style="margin-top: 30px;">QUERO MUDAR MINHA VIDA AGORA</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Renda Online Pro. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.7; font-size: 14px;">
+                Este site não faz parte do Facebook ou Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            const countdownDate = new Date().getTime() + (24 * 60 * 60 * 1000); // 24 horas
+
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.querySelector('.countdown').innerHTML = '<p>Oferta Encerrada!</p>';
+                }
+            }, 1000);
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Fecha todos os FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Abre o clicado se não estava ativo
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Scroll suave
+        function scrollToCheckout() {
+            document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Processo de checkout (você deve integrar com seu gateway de pagamento)
+        function processCheckout() {
+            // IMPORTANTE: Integre aqui com seu gateway de pagamento
+            // Exemplos: Stripe, Hotmart, Monetizze, Eduzz, etc.
+
+            alert('🎉 Redirecionando para o checkout seguro...\n\n⚠️ ATENÇÃO: Você precisa integrar esta página com um gateway de pagamento real (Stripe, Hotmart, Monetizze, etc.)');
+
+            // Exemplo de redirecionamento:
+            // window.location.href = 'https://seu-link-de-pagamento.com';
+
+            // Ou abrir modal de checkout:
+            // abrirModalCheckout();
+        }
+
+        // Inicializa o countdown quando a página carrega
+        window.onload = function() {
+            startCountdown();
+        };
+
+        // Animação ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .testimonial').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
